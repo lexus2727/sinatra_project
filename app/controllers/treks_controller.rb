@@ -48,4 +48,16 @@ class TreksController < ApplicationController
         end
       end
 
+      get '/treks/:id/edit' do
+        if is_logged_in?
+          @trek = Trek.find(params[:id])
+          if @trek.user_id == session[:user_id]
+            erb :'/treks/edit'
+          else
+            erb :'/users/login', locals: {message: "Access denied. Please log-in to view."}
+        end
+      end
+    end
+    
+
 end

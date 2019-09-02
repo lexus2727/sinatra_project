@@ -7,15 +7,11 @@
 <ul>
 
 <% @treks.each do |trek| %>
-
-  <% if trek.user_id == session[:user_id] %>
-  
-   <li><%= trek.id %> 
     
-   <%= trek.name %>
-   <%= trek.location %> </li>
-    <% end %>
-    <% end %>
+        <% if trek.user_id == session[:user_id] %>
+        <li><%= trek.id %>  
+         <%= trek.name %>
+         <%= trek.location %> </li>
+          <% end %>
+          <% end %>
 </ul>
-   
-
