@@ -10,30 +10,33 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb :index
-  end
-
-  get "/signup" do
-    if is_logged_in?
-      redirect to '/treks'
-    erb :signup
-  end
-
-  get '/users/:id' do
-    @user = User.find_by_id(params[:id])
-    @treks =  @user.treks
-    erb :users_show
-
-  end
-
+		erb :index
+	end
   
-  
+   helpers do
+	 	def logged_in?
+	 		!!session[:user_id]
+		end
 
-
-  
-
-
-  
-
+	 	def current_user
+	 		User.find(session[:user_id])
+	 	end
+	 end
 
 end
+
+  
+
+
+
+  
+  
+
+
+  
+
+
+  
+
+
+

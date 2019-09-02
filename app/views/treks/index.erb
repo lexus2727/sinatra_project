@@ -1,0 +1,12 @@
+<h2>Your Trips</h2>
+
+<button type="button" class="btn btn-default"><a href="/treks/new">Create a New Trip</a></button>
+<ul>
+<% @treks.each do |trek| %>
+    <% if trek.user_id == session[:user_id] %>
+    <li><a href ="/treks/<%= trek.id %>" style="color: #fffffff">, <%= trek.mame %>, <%= trek.location %></a></li>
+    <% end %>
+<% end %>
+
+             
+</ul>
