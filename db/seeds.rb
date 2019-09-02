@@ -17,6 +17,6 @@ end
     Trek.create(
         name: Faker::Space.agency,
         location: Faker::Pokemon.location,
-        user_id: Faker::Number.between(1, 51)
+        user_id: Faker::Number.between(from: 1, to: 51)
     )
 end

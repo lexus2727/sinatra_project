@@ -3,7 +3,13 @@
  <h2>All Trips by Users</h2>
 
  <ul>
-   <% @treks.each do |trek| %>
-     <li><a href="/treks/<%= trek.id %>" style="color: #ffffff"><%= trek.name %> in <%= trek.location %>, by <%= trek.trek_locator %></a></li>
-   <% end %>
- </ul>
+ <h2>Treks:</h2>
+ <ul>
+ <% @treks.each do |trek| %>
+      <li> <%= trek.id %>
+     <%= trek.name %> in
+     <%= trek.location %>, by
+  <%= trek.trek_locator %>
+      </li>
+     <% end %>
+     </ul>
