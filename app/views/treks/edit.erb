@@ -1,9 +1,6 @@
 <h2>Edit Your Trek</h2>
 
-<% unless locals.empty? %>
-  <%= message %>
-<% end %>
-<br>
+
 <form action="/treks/<%= @trek.id %>" method="post">
   <input type="hidden" id="hidden" name="_method" value="patch">
 

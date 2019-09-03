@@ -6,10 +6,11 @@
  <h2>Treks:</h2>
  <ul>
  <% @treks.each do |trek| %>
-      <li> <%= trek.id %>
-     <%= trek.name %> in
-     <%= trek.location %>, by
+      <li> <% trek.id %>
+    <strong> <%= trek.name %> in
+      <%= trek.location %></strong>,  by
   <%= trek.trek_locator %>
       </li>
+      <br>
      <% end %>
      </ul>
