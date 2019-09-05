@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
 
    
-    
-      get "/signup" do
-        if is_logged_in?
-            	redirect '/treks'
-            else
-                erb :"/users/signup"
+            get "/signup" do
+              if is_logged_in?
+                redirect "/treks"
+              else
+		          erb :"/users/signup"
             end
-        end
+          end
+    
 
 
         get '/users/:id' do
@@ -22,13 +22,14 @@ class UsersController < ApplicationController
         
         post "/signup" do
             @user = User.new(:username => params[:username],:email => [:email], :password => params[:password])
-            if @user.save
-              session[:user_id] = @user_id
+
+           if @user.save
+             session[:user_id] = @user.id
               redirect "/treks"
               else
-              erb :"/users/signup"
+             erb :"/users/signup"
             end
-          end
+         end
        
     
      
@@ -36,31 +37,27 @@ class UsersController < ApplicationController
     
     
         
-        get '/login' do
-        if !is_logged_in?
-           erb :'/users/login'
+       get '/login' do
+         if !is_logged_in?
+            erb :'/users/login'
         else
-         redirect "/treks"
-          
-        
-          end
-       end
+        redirect "/treks"
+        end
+      end
     
-        post "/login" do
-          @user = User.find_by(:username => params[:username])
-          
+       
+      post "/login" do
+       user = User.find_by(:username => params[:username])
+         if user && user.authenticate(params[:password])
+            session[:user_id] = user.id
+            redirect "/treks"
+         else
+           erb :"/users/login"
+          end
+        end
         
-             if @user && @user.authenticate(params[:password])
-                
-               session[:user_id] = @user.id
-               redirect "/treks"
-             else
-               erb :"/users/login"
-             end
-         end
-        
-        get "/logout" do
+       get "/logout" do
             session.clear
             redirect "/index"
-      end
-end
+       end
+   end

@@ -4,10 +4,10 @@
 <form action="/treks/<%= @trek.id %>" method="post">
   <input type="hidden" id="hidden" name="_method" value="patch">
 
-  <label for="name">Trip Name: </label>
+  <label for="name">Trek Name: </label>
   <input type="text" name="name" value="<% @trek.name %>" placeholder="name">
   <br>
-  <label for="location">Trip Location: </label>
+  <label for="location">Trek Location: </label>
   <input type="text"  name="location" value="<% @trek.location %>" placeholder="location">
   <br>
   <input type="submit" class="btn btn-default" value="Submit">
