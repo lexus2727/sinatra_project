@@ -8,7 +8,7 @@
  <% @treks.each do |trek| %>
       <li> <% trek.id %>
     <strong> <%= trek.name %> in
-      <%= trek.location %></strong>,  by
+      <%= trek.location %></strong>,  by <%= trek.trek_locator %>
   
       </li>
       <br>

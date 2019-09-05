@@ -2,23 +2,15 @@
 <h2>Treks:</h2>
 
 
-<button type="button" class="btn btn-default"><a href="/treks/new">Create a New Trip</a></button> <button type="button" class="btn btn-default"><a href="/treks/<%= @trek.id %>/edit">Edit Trip</a></button>
+<button type="button" class="btn btn-default"><a href="/treks/new">Create a New Trip</a></button> 
 
 
-
+<h3>Trek Name: <%= @trek.name %></h3>
+<h3>Location: <%= @trek.location %></h3>
 
    
    
-    <ul>
-        <% @treks.each do |trek| %>
-        <% if trek.user_id == session[:user_id] %>         
-             <% trek.id %>  
-         <li> <%= trek.name %>,
-            <%= trek.location %> </li>
-            <br>
-              <% end %>
-          <% end %>
-    </ul>
+  
 
 
     <form action="/treks/<%= @trek.id %>/delete" method="post">
