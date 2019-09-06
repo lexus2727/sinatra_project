@@ -16,7 +16,7 @@ end
 200.times do
     Trek.create(
         name: Faker::Space.agency,
-        location: Faker::Pokemon.location,
+        location: Faker::Games::Pokemon.location,
         user_id: Faker::Number.between(from: 1, to: 51)
     )
 end

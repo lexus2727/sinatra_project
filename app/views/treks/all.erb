@@ -2,15 +2,10 @@
 
  <h2>All Trips by Users</h2>
 
+ 
+ 
  <ul>
- <h2>Treks:</h2>
- <ul>
- <% @treks.each do |trek| %>
-      <li> <% trek.id %>
-    <strong> <%= trek.name %> in
-      <%= trek.location %></strong>,  by <%= trek.trek_locator %>
-  
-      </li>
-      <br>
-     <% end %>
-     </ul>
+  <% @treks.each do |trek| %>
+    <li><strong><% trek.id %><%= trek.name %> in <%= trek.location %></strong> by      <%= trek.trek_creator %></li>
+  <% end %>
+</ul>
