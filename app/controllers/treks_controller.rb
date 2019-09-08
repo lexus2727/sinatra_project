@@ -36,9 +36,9 @@ class TreksController < ApplicationController
          end
 
        get '/treks/:id' do
-         
+        if is_logged_in? 
         @trek = Trek.find_by_id(params[:id])
-        if is_logged_in? && @trek.user_id == current_user.id
+       
           erb :"/treks/show"
         else
           erb :'/users/login', locals: {message: "Access denied. Please log-in to view."}

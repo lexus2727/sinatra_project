@@ -1,0 +1,95 @@
+
+* {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+
+
+html,
+body {
+  height: 100%;
+  background: url("https://cdn.pixabay.com/photo/2015/07/13/14/40/paris-843229_960_720.jpg") no-repeat center center fixed;
+                  
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                background-attachment: fixed;
+                overflow: hidden;
+}
+
+.wrapper
+ {
+    margin: 40px;
+    max-width: 960px;
+    padding: 2.25%; /* 18px / 800px */
+    width: 85%;
+    color: white;
+    text-align: left;
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 40px;
+    text-align: left;
+  }
+
+  h2 {
+      font-size: 25px;
+      text-align: center;
+  }
+
+  p {
+      text-align: center;
+  }
+
+  .branding {
+      text-align: center;
+      margin-bottom: 500px;
+  }
+
+  li + ul {
+      text-align: center;
+      margin-left: 40px;
+      padding-right: 100px;
+  }
+   .btn-default,.btn-default:hover,
+   .btn-default:focus
+    {
+    color: #333;
+    background-color: #fff;
+   }
+
+   h3 {
+  margin: 20px, 0, 10px;
+    font-size: 24px;
+      text-align: left;
+      
+  }
+
+
+form {
+    text-align: left;
+    width: 70%;
+    
+
+}
+
+.cover-heading {
+    text-align: center;
+}
+
+div.container-fluid {
+    font-size: 20px;
+    margin-right: 80px;
+}
+
+.cover .btn-lg {
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+  
+
+
+
+ 

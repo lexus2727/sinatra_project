@@ -7,6 +7,9 @@ gem 'rake'
 gem 'require_all'
 gem 'thin'
 gem 'bcrypt'
+gem 'bootstrap', '~> 4.3.1'
+
+
 
 
 group :development do
