@@ -1,6 +1,12 @@
-
+<br><br>
 <h1>Welcome, <%= @user.username %>!</h1>
 
 <button type="button" class="btn btn-default"><a href="/treks/new">Create a New Trip</a></button> 
 
+<br><br>
+<h2 style="text-align: left">Treks:</h2>
 
+<% @treks.each do |trek| %>
+  <%= trek.name %>
+  <%= trek.location %>
+<% end %>

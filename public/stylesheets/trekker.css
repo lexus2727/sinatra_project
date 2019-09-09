@@ -3,6 +3,10 @@
     font-family: 'Open Sans', sans-serif;
   }
 
+  html {
+      overflow: auto;
+  }
+
 
 
 html,

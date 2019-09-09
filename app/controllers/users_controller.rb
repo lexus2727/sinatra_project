@@ -2,18 +2,19 @@ class UsersController < ApplicationController
 
    
             get "/signup" do
-              #if is_logged_in?
-               # redirect "/treks"
-             # else
+              if is_logged_in?
+                redirect "/treks"
+             else
 		          erb :"/users/signup"
             end
-          #end
+          
+          end
     
 
 
         get '/users/:id' do
             @user = User.find_by_id(params[:id])
-            
+            @treks = @user.treks
             erb :"/users/show"
           end
 
@@ -58,6 +59,6 @@ class UsersController < ApplicationController
         
        get "/logout" do
             session.clear
-            redirect "/index"
+            redirect "/login"
        end
    end
