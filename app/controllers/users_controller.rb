@@ -13,10 +13,12 @@ class UsersController < ApplicationController
 
 
         get '/users/:id' do
+          if is_logged_in?
             @user = User.find_by_id(params[:id])
             @treks = @user.treks
             erb :"/users/show"
           end
+        end
 
 
 
@@ -26,7 +28,7 @@ class UsersController < ApplicationController
 
            if @user.save
              session[:user_id] = @user.id
-              redirect "/treks"
+              redirect "/users/#{@user.id}"
               else
              erb :"/users/signup"
             end
@@ -59,6 +61,6 @@ class UsersController < ApplicationController
         
        get "/logout" do
             session.clear
-            redirect "/login"
+            redirect  "/login"
        end
    end
