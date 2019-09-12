@@ -28,7 +28,7 @@ class UsersController < ApplicationController
              session[:user_id] = @user.id
              redirect "/users/#{@user.id}"
            else
-             erb :"/users/signup"
+             erb :"/users/signup", locals: {message: "Access denied. Please log-in to view."}
            end
         end
        
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
             redirect "/treks"
          else
-           erb :"/users/login"
+           erb :"/users/login", locals: {message: "Access denied. Please log-in to view."}
           end
         end
         

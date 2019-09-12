@@ -1,6 +1,11 @@
 
 <br><br>
 <h1>Create an Account</h1>
+<% unless locals.empty? %>
+  <%= message %>
+<% end %>
+<br>
+
 <form action="/signup" method="POST">
   <label for="username">Username:</label>
   <input type="text" class="form-control"  name="username" placeholder="username">
