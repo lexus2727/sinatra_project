@@ -18,7 +18,28 @@
    <link rel="stylesheet" href="/stylesheets/trekker.css" /> 
   </head>
   <body>
-    <div class="wrapper">
+
+   
+ 
+          <h3 class="masthead-brand" style="color: white">Trekker</h3>
+          <nav>
+            <ul class="nav masthead-nav">
+              <% if is_logged_in? %>
+                <li class="active"><a href="/treks/new" style="color: white; margin: 10px">Create Trek</a></li>
+                <br>
+                <li class="active"><a href="/treks" style="color: white; margin: 10px">My Treks <br></a></li>
+                <li><a href="/logout" style="color: white; margin: 10px">Log Out</a></li>
+              <% else %>
+                <li class="active"><a href="/login" style="color: white; margin: 10px">Log In<br> </a></li>
+                <li><a href="/signup" style="color: white; margin: 10px">Sign Up</a></li>
+              <% end %>
+            </ul>
+          </nav>
+          
+        
+
+<div class="wrapper">
+  <div class="container-fluid">
 
         <%= yield %>
 
@@ -28,9 +49,13 @@
       <br>
       
       
-        <small>&copy; 2019 <strong>SinatraProject</strong></small>
-      </footer>
+        <small>&copy; 2019 <strong>Trekker by Candice Parker</strong></small>
+       </footer>
+      </div>
     </div>
+</div>
+
+    
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     
