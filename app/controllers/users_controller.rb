@@ -5,7 +5,7 @@ class UsersController < ApplicationController
             if is_logged_in?
                redirect "/treks"
             else
-		          erb :"/users/signup"
+		          erb :"/users/signup",  locals: {message: "There seems to be an error. Please try again."}
             end
           end
     
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
              session[:user_id] = @user.id
              redirect "/users/#{@user.id}"
            else
-             erb :"/users/signup", locals: {message: "There seems to be an error. Please try again."}
+             erb :"/users/signup"
            end
         end
        
