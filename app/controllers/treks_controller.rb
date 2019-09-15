@@ -1,4 +1,5 @@
 class TreksController < ApplicationController
+     
       get "/treks" do
          if is_logged_in?
             @treks = current_user.treks
@@ -39,7 +40,7 @@ class TreksController < ApplicationController
 
       
        get '/treks/:id/edit' do
-          if is_logged_in?
+         if is_logged_in?
             @trek = Trek.find_by_id(params[:id])
             if @trek.user.id == session[:user_id]
                erb :"/treks/edit"
