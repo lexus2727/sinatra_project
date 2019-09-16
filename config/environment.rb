@@ -10,6 +10,7 @@ ActiveRecord::Base.establish_connection(
 )
 
 
+
 require './app/controllers/application_controller'
 
 require './app/controllers/users_controller'
