@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
         get '/users/:id' do
             @user = User.find_by_id(params[:id])
-            @treks = @user.tri
+            
             erb :"/users/show"
           end
 
@@ -59,6 +59,6 @@ class UsersController < ApplicationController
         
        get "/logout" do
             session.clear
-            redirect "/index"
+            redirect "/"
        end
    end
