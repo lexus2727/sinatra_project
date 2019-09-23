@@ -5,7 +5,7 @@ class TreksController < ApplicationController
             @treks = current_user.treks
             erb :'/treks/index'
          else
-            erb :'/users/login', locals: {message: "Access denied. Please log-in to view."}
+            erb :'/users/login'
          end
        end
         
@@ -14,14 +14,14 @@ class TreksController < ApplicationController
          if is_logged_in?
            erb :"/treks/new"
          else
-         erb :'/users/login', locals: {message: "Access denied. Please log-in to view."}
+         erb :'/users/login'
        end
      end
 
       
      post '/treks' do
         if params[:name].empty? || params[:location].empty?
-           erb :'/treks/new', locals: {message: "There seems to be an error. Please try again."}
+           erb :'/treks/new'
         else
            @trek = Trek.create(name: params[:name], location: params[:location], user_id: current_user.id)
            redirect to "/treks/#{@trek.id}"
@@ -34,7 +34,7 @@ class TreksController < ApplicationController
            @trek = Trek.find_by_id(params[:id])
            erb :"/treks/show"
          else
-           erb :'/users/login', locals: {message: "Access denied. Please log-in to view."}
+           erb :'/users/login'
          end
        end
 
@@ -45,7 +45,7 @@ class TreksController < ApplicationController
             if @trek.user.id == session[:user_id]
                erb :"/treks/edit"
           else
-               erb :'/users/login', locals: {message: "Access denied. Please log-in to view."}
+               erb :'/users/login'
             end
           end
       end

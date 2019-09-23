@@ -10,7 +10,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-		erb :index
+ @trek = Trek.last
+   erb :index
   end
 
 
@@ -25,7 +26,7 @@ class ApplicationController < Sinatra::Base
   end
 
    def current_user
-    User.find(session[:user_id])
+    @user ||= User.find(session[:user_id]) 
   end
  end
 end

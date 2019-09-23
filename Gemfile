@@ -25,5 +25,9 @@ group :test do
   gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
 end
 
+group :production do
+  gem 'pg'
+end
+
 
 
