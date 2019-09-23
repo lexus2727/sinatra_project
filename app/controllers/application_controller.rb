@@ -10,7 +10,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
- @trek = Trek.last
+ 
    erb :index
   end
 
