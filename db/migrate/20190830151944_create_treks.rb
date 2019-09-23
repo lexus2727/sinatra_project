@@ -1,4 +1,4 @@
-class CreateTreks < ActiveRecord::Migration[4.2]
+class CreateTreks < ActiveRecord::Migration[5.2]
   def change
     create_table :treks do |t|
       t.string :name
